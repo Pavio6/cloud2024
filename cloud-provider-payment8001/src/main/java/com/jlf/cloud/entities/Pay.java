@@ -1,5 +1,8 @@
 package com.jlf.cloud.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,32 +15,38 @@ import java.util.Date;
  * 表注释：支付交易表
 */
 @Table(name = "t_pay")
+@Schema(description = "支付交易表")
 public class Pay {
     @Id
     @GeneratedValue(generator = "JDBC")
+    @Schema(description = "主键")
     private Integer id;
 
     /**
      * 支付流水号
      */
+    @Schema(description = "支付流水号")
     @Column(name = "pay_no")
     private String payNo;
 
     /**
      * 订单流水号
      */
+    @Schema(description = "订单流水号")
     @Column(name = "order_no")
     private String orderNo;
 
     /**
      * 用户账号ID
      */
+    @Schema(description = "用户账号ID")
     @Column(name = "user_id")
     private Integer userId;
 
     /**
      * 交易金额
      */
+    @Schema(description = "交易金额")
     private BigDecimal amount;
 
     /**
@@ -48,6 +57,8 @@ public class Pay {
     /**
      * 创建时间
      */
+    // 指定为叶卡捷琳堡时区
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+5")
     @Column(name = "create_time")
     private Date createTime;
 
@@ -55,6 +66,7 @@ public class Pay {
      * 更新时间
      */
     @Column(name = "update_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+5")
     private Date updateTime;
 
     /**
