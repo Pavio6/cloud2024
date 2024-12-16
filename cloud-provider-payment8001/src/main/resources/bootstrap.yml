@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cloud-payment-service
+    # Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost # Consul服务所在的主机
+      port: 8500 # Consul服务的端口
+      discovery:
+        service-name: ${spring.application.name} # 该服务在 Consul 中注册的名字
+      config:
+        profile-separator: '-' # 用于控制配置文件中 环境 (profile) 和 配置文件名称 之间的分隔符
+        format: YAML # 配置文件的格式
+
+# config/cloud-payment-service/data
+# config/cloud-payment-service-dev/data
+# config/cloud-payment-service-prod/data
+
+### bootstrap.yml 主要用于应用启动时的初始化配置 它是在 application.yml 之前加载的
+### 主要配置Spring Cloud的相关配置 (服务发现 配置中心 等等 )

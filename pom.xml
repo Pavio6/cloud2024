@@ -12,6 +12,9 @@
         <module>mybatis_generator2024</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
+        <module>cloud-provider-payment8002</module>
+        <module>cloud-consumer-feign-order80</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

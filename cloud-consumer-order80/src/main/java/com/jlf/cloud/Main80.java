@@ -3,16 +3,18 @@ package com.jlf.cloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * 支付模块
+ * 下订单模块
  */
-@EnableDiscoveryClient // 开启服务发现
+
+/**
+ * ctrl + alt + A 选择文件 使用该快捷键可以将文件add到git
+ */
 @SpringBootApplication
-@MapperScan("com.jlf.cloud.mapper") // import tk.mybatis.spring.annotation.MapperScan;
-public class Main8001 {
+@EnableDiscoveryClient
+public class Main80 {
     public static void main(String[] args) {
-        SpringApplication.run(Main8001.class, args);
+        SpringApplication.run(Main80.class, args);
     }
 }
