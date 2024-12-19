@@ -30,7 +30,6 @@ public class PayController {
 
     @Resource
     private PayService payService;
-
     @PostMapping(value = "/pay/add")
     @Operation(summary = "新增",description = "新增支付流水方法,json串做参数")
     public ResultData<String> addPay(@RequestBody Pay pay) {
