@@ -1,0 +1,10 @@
+# nacos 配置
+spring:
+  application:
+    name: my-nacos-config-client
+  cloud:
+    discovery:
+      server-addr: localhost:8848
+    config:
+      server-addr: localhost:8848
+      file-extension: yaml

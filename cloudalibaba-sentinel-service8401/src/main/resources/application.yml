@@ -1,0 +1,23 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport: #  Sentinel 控制台（Dashboard） 之间进行通信的配置
+        dashboard: localhost:8080 #  Sentinel 控制台（Dashboard）所在的 主机和端口
+        port: 8719 #  Sentinel 客户端在本地应用中监听的端口
+      web-context-unify: false # controller层的方法对service层调用不认为是同一个根链路
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow # com.alibaba.cloud.sentinel.datasource.RuleType
+

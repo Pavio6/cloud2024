@@ -1,0 +1,5 @@
+server:
+  port: 3378
+spring:
+  profiles:
+    active: dev # 生产环境
