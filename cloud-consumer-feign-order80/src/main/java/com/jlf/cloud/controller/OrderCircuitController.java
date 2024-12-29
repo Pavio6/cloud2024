@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Circuit Breaker 控制类
+ */
 @RestController
 public class OrderCircuitController {
     @Resource
@@ -26,7 +29,8 @@ public class OrderCircuitController {
     }
 
     /**
-     * 舱壁/隔离
+     * 舱壁/隔离 BulkHead
+     * Bulkhead 主要用于限制服务并发数量  防止某个服务过载影响到系统其他部分
      */
     @GetMapping(value = "/feign/pay/bulkhead/{id}")
     @Bulkhead(name = "cloud-payment-service", fallbackMethod = "myBulkheadFallback", type = Bulkhead.Type.SEMAPHORE)

@@ -8,8 +8,6 @@ import com.jlf.cloud.resp.ReturnCodeEnum;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.function.Predicate;
-
 @RestController
 public class OrderController {
     @Resource
@@ -20,6 +18,10 @@ public class OrderController {
         ResultData resultData = payFeignAPI.addPay(payDTO);
         return resultData;
     }
+
+    /**
+     * 测试 OpenFeign超时控制
+     */
     @GetMapping(value = "/feign/pay/get/{id}")
     public ResultData getPayInfo(@PathVariable("id") Integer id) {
         ResultData resultData = null;

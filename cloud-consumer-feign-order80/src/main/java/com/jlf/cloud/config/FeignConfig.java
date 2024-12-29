@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * OpenFeign是一种声明式的HTTP客户端 用于微服务中进行服务之间的通信
  * 主要作用：简化HTTP请求的编写 只需要定义接口指定请求的URL和方法
+ *
+ * OPenFeign默认集成了LoadBalancer (负载均衡)
  */
 @Configuration
 public class FeignConfig {

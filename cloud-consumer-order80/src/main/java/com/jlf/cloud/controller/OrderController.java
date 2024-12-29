@@ -12,7 +12,16 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+/**
+ * RestTemplate
+ * RestTemplate 是 Spring 框架提供的一个用于访问 RESTFul Web 服务的客户端工具类
+ * 用于发送 HTTP 请求和接收 HTTP 响应
+ */
 
+/**
+ * Consul
+ * 服务注册和发现
+ */
 @RestController
 public class OrderController {
 

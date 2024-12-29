@@ -30,16 +30,21 @@ public interface PayFeignAPI {
     @GetMapping(value = "/pay/get/info")
     String mylb();
     /**
-     * Resilience4j CircuitBreaker 的例子
+     * Resilience4j CircuitBreaker 熔断/降级
      */
     @GetMapping(value = "/pay/circuit/{id}")
     String myCircuit(@PathVariable("id") Integer id);
 
     /**
-     * Bulkhead 例子
+     * Bulkhead 隔离
      */
     @GetMapping(value = "/pay/bulkhead/{id}")
     String myBulkhead(@PathVariable("id") Integer id);
+    /**
+     * Resilience4j RateLimit 限流
+     */
+    @GetMapping(value = "/pay/ratelimit/{id}")
+    String myRatelimit(@PathVariable("id") Integer id);
     /**
      * Micrometer(Sleuth)进行链路监控的例子
      */
